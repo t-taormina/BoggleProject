@@ -10,11 +10,11 @@ Rayyan Ansari => rayyan.ansari@oit.edu
 ### Scheduled team meeting days/time/mode 
 ==========================================================
 
-Mode-> for all meetings will be remote/discord/microsoft teams
+- Mode-> for all meetings will be remote/discord/microsoft teams
 
-Days-> we will plan for a meeting and progress report after every class
+- Days-> we will plan for a meeting and progress report after every class
 
-Time-> Times will be immediately following class
+- Time-> Times will be immediately following class
 
 
 
@@ -32,9 +32,9 @@ Time-> Times will be immediately following class
 ==========================================================
 #### Who will do what? 
 
-Freddy - Build Board
-Rayyan - Write program to let user play
-Tyler - Write program for computer to play
+- Freddy - Build Board
+- Rayyan - Write program to let user play
+- Tyler - Write program for computer to play
 
 - Who ever finishes first will start Scoring
 - Testing will be a group hackathon where we try to break the project. 
