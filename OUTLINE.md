@@ -2,9 +2,9 @@
 
 ### Github link = https://github.com/till-t/BoggleProject.git
 ==========================================================
-Tyler Taormina => tyler.taormina@oit.edu
-Freddy Hernandez => freddy.hernandezjimenez@oit.edu
-Rayyan Ansari => rayyan.ansari@oit.edu
+- Tyler Taormina => tyler.taormina@oit.edu
+- Freddy Hernandez => freddy.hernandezjimenez@oit.edu
+- Rayyan Ansari => rayyan.ansari@oit.edu
 
 
 ### Scheduled team meeting days/time/mode 
