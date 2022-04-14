@@ -46,10 +46,10 @@ Tyler - Write program for computer to play
 #### Weekly schedule of what will be done by whom between now (Week 4) and when the project is due (Week 10). 
 
 
-Week 1= Goal is for everyone to have psuedo code for there portion.
-Week 2= Goal is for everyone to understand how best to tie pieces together.
-Week 3= Goal is for everyone to have an implementation or questions about how to implement.
-Week 4= Goal is for everyone to become familiar with the other sections and begin writing scoring.
-Week 5= Goal is to finish any remaining code. 
-Week 6= Testing
-Week 7= Testing
+- Week 1 = Goal is for everyone to have psuedo code for there portion.
+- Week 2 = Goal is for everyone to understand how best to tie pieces together.
+- Week 3 = Goal is for everyone to have an implementation or questions about how to implement.
+- Week 4 = Goal is for everyone to become familiar with the other sections and begin writing scoring.
+- Week 5 = Goal is to finish any remaining code. 
+- Week 6 = Testing
+- Week 7 = Testing
