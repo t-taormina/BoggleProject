@@ -31,13 +31,23 @@
 ### Division of labor 
 ==========================================================
 #### Who will do what? 
-
-- Freddy - Build Board
-- Rayyan - Write program to let user play
-- Tyler - Write program for computer to play
-
-- Who ever finishes first will start Scoring
-- Testing will be a group hackathon where we try to break the project. 
+- Rayyan
+```
+bool humanWordSearch(string word);
+int getScoreComputer()
+ostream& operator<< (ostream& stream);
+```
+- Freddie 
+```
+char getLetter(int row, int col);
+int getScoreHuman()
+```
+- Tyler
+```
+string* computerWordSearch();
+bool checkWord(string word);
+Boggle(fstream lexicon, string boardText);
+```
 
 
 
