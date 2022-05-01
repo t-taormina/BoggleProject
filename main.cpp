@@ -1,7 +1,13 @@
+//Boggle Project CST136
+//
+
 #include <iostream> 
+#include <chrono>
 #include <cctype> 
 #include <random>  
 #include <string>
+#include <algorithm>
+#include <array>
 
 using std::string;  
 using u32 = uint_least32_t; 
@@ -25,40 +31,52 @@ string CUBE_FOURTEEN = "ELRTTY";
 string CUBE_FIFTEEN = "HIMNQU";
 string CUBE_SIXTEEN = "HLNNRZ"; 
 
-string CUBE_ARRAY[] = {CUBE_ONE, CUBE_TWO, CUBE_THREE, CUBE_FOUR, CUBE_FIVE, 
+std::array<string,16> CUBE_ARRAY = {CUBE_ONE, CUBE_TWO, CUBE_THREE, CUBE_FOUR, CUBE_FIVE, 
   CUBE_SIX, CUBE_SEVEN, CUBE_EIGHT, CUBE_NINE, CUBE_TEN, CUBE_ELEVEN, 
   CUBE_TWELVE, CUBE_THIRTEEN, CUBE_FOURTEEN, CUBE_FIFTEEN, CUBE_SIXTEEN};
 
+void displayBoard(string _result);  
 string getRandomLetters();
 int getRandom();
-int main( void )
-{
+
+int main( void ) {
   string result = getRandomLetters();
+  displayBoard(result);
+  return 0;
 }
 
 int getRandom() {
   std::random_device os_seed;
   const u32 seed = os_seed();
-	int num;
-
   engine generator( seed );
-  std::uniform_int_distribution< u32 > distribute( 0, 6 );
-  num = distribute(generator);
+  std::uniform_int_distribution< u32 > distribute( 0,5 );
+  int num = distribute(generator);
 
   return num;
-}
+} 
 
 string getRandomLetters() {
-  string result;
-
-  for (int i = 0; i < NUM_CUBES; i++){
+  string result = "";
+  unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+  shuffle(CUBE_ARRAY.begin(), CUBE_ARRAY.end(), std::default_random_engine(seed));
+  for (int i = 0; i < NUM_CUBES + 1; i++){
+    std::cout << CUBE_ARRAY[i] << std::endl;
     result.push_back(CUBE_ARRAY[i][getRandom()]);
   }
-  std::cout << result << std::endl;
   return result;
-}
-
-void displayBoard() {
 
 }
-  
+
+void displayBoard(string _result) {
+  int counter = 0;
+  for (int i = 0; i < 4; i++){
+    for (int j = 0; j < 4; j++){
+      std::cout << " " << _result[counter] << " ";
+      counter++;  
+    }
+    std::cout <<  std::endl;
+  }
+}
+
+
+
