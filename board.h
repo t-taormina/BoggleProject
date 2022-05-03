@@ -13,12 +13,22 @@ using std::string;
 using u32 = uint_least32_t; 
 using engine = std::mt19937;
 
-class Board : public Dice{
+class Board : public Dice {
     public:
-    void displayBoard(string _result);  
-    string getRandomLetters();
-    int getRandom();
-    bool inBounds(int row,int col);
+        string result;
+        char boardArray[4][4];
+
+        Board();
+        Board(string);
+        bool inBounds(int row,int col);
+
+  
+  
+        void fillBoard();
+        void displayBoard();  
+        string getRandomLetters();
+        int getRandom();
+
 };
 
 #endif 
