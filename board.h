@@ -16,10 +16,12 @@ using engine = std::mt19937;
 class Board : public Dice {
     public:
         string result;
+        char board[4][4];
 
         Board();
         Board(string);
 
+        void fillBoard();
         void displayBoard();  
         string getRandomLetters();
         int getRandom();

@@ -1,18 +1,34 @@
 #include "board.h"
 
+//Default constructor gives random board
 Board::Board(){
     result = getRandomLetters();
+    fillBoard();
 }
 
+//Parameterized constructor gives predetermined board.
+//If an incorrect amount of charcters are given for the board 
+// then the board will read...
+//  O O O O
+//  O O O O
+//  O O O O
+//  O O O O 
+//  We will display an error message and prompt user to reenter.
 Board::Board(string _userInput){
     if(_userInput.length() == 16){
         result = _userInput;
+        fillBoard();
     }
     else{
-        result = "MustBe16LetrDude";
+        result = "OOOOOOOOOOOOOOOO";
+        std::cout << std::endl;
+        std::cout << "          **Error** Must enter 16 characters." << std::endl;
     }
+
 }
 
+//Generates a random number for use by function 'getRandomLetters'.
+//Used specifically to generate random index for cube array.
 int Board::getRandom() {
     std::random_device os_seed;
     const u32 seed = os_seed();
@@ -22,6 +38,7 @@ int Board::getRandom() {
     return num;
 } 
 
+//Generates a random board by shuffling the 'CUBE' array and using a random index.
 string Board::getRandomLetters() {
     string _result = "";
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
@@ -32,6 +49,7 @@ string Board::getRandomLetters() {
     return _result;
 }
 
+//It... displays the board.
 void Board::displayBoard() {
     int counter = 0;
     for (int i = 0; i < 4; i++){
@@ -42,3 +60,28 @@ void Board::displayBoard() {
         std::cout <<  std::endl;
     }
 }
+
+
+void Board::fillBoard(){
+    int counter = 0;
+    for (int i = 0; i < 4; i++){
+        for (int j = 0; j < 4; j++){
+            board[i][j] = result[counter];
+            counter++;  
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
