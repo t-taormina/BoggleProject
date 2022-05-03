@@ -61,12 +61,12 @@ void Board::displayBoard() {
     }
 }
 
-
+//Puts the string into an array for computer and human search. 
 void Board::fillBoard(){
     int counter = 0;
     for (int i = 0; i < 4; i++){
         for (int j = 0; j < 4; j++){
-            board[i][j] = result[counter];
+            boardArray[i][j] = result[counter];
             counter++;  
         }
     }

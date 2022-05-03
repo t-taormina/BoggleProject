@@ -16,7 +16,7 @@ using engine = std::mt19937;
 class Board : public Dice {
     public:
         string result;
-        char board[4][4];
+        char boardArray[4][4];
 
         Board();
         Board(string);
