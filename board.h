@@ -13,11 +13,16 @@ using std::string;
 using u32 = uint_least32_t; 
 using engine = std::mt19937;
 
-class Board : public Dice{
+class Board : public Dice {
     public:
-    void displayBoard(string _result);  
-    string getRandomLetters();
-    int getRandom();
+        string result;
+
+        Board();
+        Board(string);
+
+        void displayBoard();  
+        string getRandomLetters();
+        int getRandom();
 };
 
 #endif 
