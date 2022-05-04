@@ -20,10 +20,8 @@ class Board : public Dice {
 
         Board();
         Board(string);
-        bool inBounds(int row,int col);
 
-  
-  
+        bool inBounds(int row,int col);
         void fillBoard();
         void displayBoard();  
         string getRandomLetters();
