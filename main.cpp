@@ -15,11 +15,6 @@ int main( void ) {
   Board board1("CantReadThisMann");
   board1.displayBoard();
 
-  for (int i = 0; i < 4; i++){
-    for (int j = 0; j < 4; j++){
-      std::cout << board1.boardArray[i][j] << std::endl;
-    }
-  }
 
     
   return 0;

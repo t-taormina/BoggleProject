@@ -34,5 +34,5 @@ word, that is, for each word that player found that no other player was able to 
 ## Good links for different functions 
 - https://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
 - https://www.cplusplus.com/reference/algorithm/shuffle/
--
+- https://jarv.is/notes/how-to-pull-request-fork-github/
 - 	
