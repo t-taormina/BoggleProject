@@ -11,11 +11,11 @@
 
 - If using GNU compiler, run the command..
 	```
-	g++ main.cpp board.cpp
+	g++ main.cpp board.cpp -o main
 	```
 - then run the command... 
 	``` 
-	./a.out
+	./main
 	```
 - Program should output to the terminal.
 - There are other ways to compile and run the program depending on your OS and setup. This is just one way.
@@ -36,3 +36,4 @@ word, that is, for each word that player found that no other player was able to 
 - https://www.cplusplus.com/reference/algorithm/shuffle/
 - https://jarv.is/notes/how-to-pull-request-fork-github/
 - 	
+	
