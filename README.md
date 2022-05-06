@@ -11,11 +11,11 @@
 
 - If using GNU compiler, run the command..
 	```
-	g++ main.cpp board.cpp -o main
+	clang++ main.cpp board.cpp dictionary.cpp -o run
 	```
 - then run the command... 
 	``` 
-	./main
+	./run
 	```
 - Program should output to the terminal.
 - There are other ways to compile and run the program depending on your OS and setup. This is just one way.
