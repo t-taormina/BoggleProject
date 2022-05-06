@@ -8,32 +8,37 @@ Board::Board(){
 
 //Parameterized constructor gives predetermined board.
 //If an incorrect amount of charcters are given for the board 
-// then the board will read...
-//  O O O O
-//  O O O O
-//  O O O O
-//  O O O O 
-//  We will display an error message and prompt user to reenter.
-Board::Board(string _userInput){
+// then the board will default to a random setup.
+Board::Board(string& myfile, string _userInput){
     if(_userInput.length() == 16){
         result = _userInput;
         fillBoard();
     }
     else{
-        result = "OOOOOOOOOOOOOOOO";
-        std::cout << std::endl;
-        std::cout << "          **Error** Must enter 16 characters." << std::endl;
+        result = getRandomLetters();
+    }
+    ifstream input(myfile);
+    string word;
+    
+    if(!input) {
+        cout << "Error readiing file" << endl;
+        return;
+    }
+    
+    while(input >> word) {
+        dict.addWord(word);
     }
 
+    input.close();
 }
 
 //Generates a random number for use by function 'getRandomLetters'.
 //Used specifically to generate random index for cube array.
 int Board::getRandom() {
     std::random_device os_seed;
-    const u32 seed = os_seed();
-    engine generator( seed );
-    std::uniform_int_distribution< u32 > distribute( 0,5 );
+    const uint_least32_t seed = os_seed();
+    std::mt19937 generator( seed );
+    std::uniform_int_distribution< uint_least32_t > distribute( 0,5 );
     int num = distribute(generator);
     return num;
 } 

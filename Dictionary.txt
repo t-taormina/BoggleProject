@@ -683,7 +683,7 @@ acknowledge
 acknowledgeable
 acknowledged
 acknowledgement
-acknowledgements
+cknowledgements
 acknowledges
 acknowledging
 acknowledgment

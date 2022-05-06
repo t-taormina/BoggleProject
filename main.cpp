@@ -4,20 +4,11 @@
 #include "board.h"
   
 int main( void ) {
-  Board board4;
-  board4.displayBoard();
-  std::cout << std::endl;
-
-  Board board("Isten");
-  board.displayBoard();
-  std::cout << std::endl;
-    
-  Board board1("CantReadThisMann");
+  string myfile = "Dictionary.txt";
+  Board board1(myfile, "CANTREADTHISMANN");
+  cout << board1.dict.wordCount() << endl;
   board1.displayBoard();
-
-
     
   return 0;
 }
-
 
