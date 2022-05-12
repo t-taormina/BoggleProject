@@ -31,7 +31,6 @@ static string const CUBE_THIRTEEN = "eiosst";
 static string const CUBE_FOURTEEN = "elrtty";
 static string const CUBE_FIFTEEN = "himnqu";
 static string const CUBE_SIXTEEN = "hlnnrz";
-static string const MYFILE = "practice.txt";
       
  
 class Board : public Dictionary{
@@ -62,7 +61,7 @@ class Board : public Dictionary{
         void SolveBoard();
         void SearchForWord(int row, int col, string currPrefix);
         void printArray();
-        //void score();
+        void score();
 };
 
 #endif 

@@ -5,7 +5,6 @@ Board::Board(){
     result = getRandomLetters();
     fillBoard();
 }
-
 //Parameterized constructor gives predetermined board.
 //If an incorrect amount of charcters are given for the board 
 // then the board will default to a random setup.
@@ -58,10 +57,12 @@ string Board::getRandomLetters() {
 
 //It... displays the board.
 void Board::displayBoard() {
+    string temp = result;
+    transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
     int counter = 0;
     for (int i = 0; i < 4; i++){
         for (int j = 0; j < 4; j++){
-            std::cout << " " << result[counter] << " ";
+            std::cout << " " << temp[counter] << " ";
             counter++;  
         }
         std::cout <<  std::endl;
@@ -110,7 +111,6 @@ void Board::SearchForWord(int row, int col, string currPrefix)
             compList.push_back(currPrefix);
         }
     }
-
     
     currPrefix = currPrefix + boardArray[row][col];
     checkedArray[row][col] = true;
@@ -127,7 +127,6 @@ void Board::SearchForWord(int row, int col, string currPrefix)
     checkedArray[row][col] = false;
 
 }
-
 
 void Board::printArray(){
     int total = compList.size();

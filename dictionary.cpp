@@ -1,6 +1,5 @@
 #include "dictionary.h"
 
-
 Dictionary::Dictionary()
 {
     root = new Node;
