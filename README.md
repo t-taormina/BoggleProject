@@ -15,7 +15,7 @@
 	```
 - then run the command... 
 	``` 
-	./run
+	./main
 	```
 - Program should output to the terminal.
 - There are other ways to compile and run the program depending on your OS and setup. This is just one way.
