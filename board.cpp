@@ -12,16 +12,18 @@ Board::Board(){
 Board::Board(string& myfile, string _userInput){
     if(_userInput.length() == 16){
         result = _userInput;
+        transform(result.begin(), result.end(), result.begin(), ::tolower);
         fillBoard();
     }
     else{
         result = getRandomLetters();
+        fillBoard();
     }
     ifstream input(myfile);
     string word;
     
     if(!input) {
-        cout << "Error readiing file" << endl;
+        cout << "Error reading file" << endl;
         return;
     }
     
@@ -77,11 +79,75 @@ void Board::fillBoard(){
     }
 }
 
+void Board::SolveBoard()
+{
+    string currPrefix;
+ 
+    for (int row = 0; row < 4; row++) {
+        for (int col = 0; col < 4; col++) {
+            SearchForWord(row, col, currPrefix);
+        }
+    }
+}
+
+void Board::SearchForWord(int row, int col, string currPrefix)
+{
+    if(row >= 4 || col >= 4)
+        return;
+    
+    if(row < 0 || col < 0)
+        return;
+    
+    if(checkedArray[row][col] != false)
+        return;
+    
+    if(!dict.isPrefix(currPrefix))
+        return;
+    
+    if(dict.isWord(currPrefix)) {
+        if(!wordsFound.isWord(currPrefix)) {
+            wordsFound.addWord(currPrefix);
+            compList.push_back(currPrefix);
+        }
+    }
+
+    
+    currPrefix = currPrefix + boardArray[row][col];
+    checkedArray[row][col] = true;
+    
+    SearchForWord(row , col - 1, currPrefix);
+    SearchForWord(row , col + 1, currPrefix);
+    SearchForWord(row - 1 , col, currPrefix);
+    SearchForWord(row + 1 , col, currPrefix);
+    SearchForWord(row + 1 , col + 1, currPrefix);
+    SearchForWord(row + 1 , col - 1, currPrefix);
+    SearchForWord(row - 1 , col + 1, currPrefix);
+    SearchForWord(row - 1 , col - 1, currPrefix);
+
+    checkedArray[row][col] = false;
+
+}
 
 
+void Board::printArray(){
+    int total = compList.size();
+    for (int i = 0; i < total; i++){
+        cout << compList[i] << endl;
+    }
+}
 
 
+//
+//void Board::score(){
+    //for(int i = 0; i < compList.size(); i++){
 
+
+   // }
+   // for(int i = 0; i < humanList.size(); i++){
+
+
+ //   }
+//}
 
 
 

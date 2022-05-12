@@ -32,3 +32,4 @@ private:
 	Node *currNode;
 	int numWords;
 };
+	

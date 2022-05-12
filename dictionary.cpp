@@ -28,7 +28,6 @@ void Dictionary::addWord(string word)
     numWords++;
 }
 
-
 bool Dictionary::isWord(string word)
 {
     currNode = root;

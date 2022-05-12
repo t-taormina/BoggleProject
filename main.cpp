@@ -5,9 +5,10 @@
   
 int main( void ) {
   string myfile = "Dictionary.txt";
-  Board board1(myfile, "CANTREADTHISMANN");
-  cout << board1.dict.wordCount() << endl;
+  Board board1(myfile, "ABctaBWFSTRAQWFT");
   board1.displayBoard();
+  board1.SolveBoard();
+  board1.printArray();
     
   return 0;
 }
