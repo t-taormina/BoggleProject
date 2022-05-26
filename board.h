@@ -54,6 +54,9 @@ class Board {
         Board(string& myfile, string _userInput);
         ~Board();
 
+        int getHumanScore();
+        int getComputerScore();
+        int score(int word_length);
         bool inBounds(int row,int col);
         void fillBoard();
         void displayBoard();  
@@ -62,7 +65,7 @@ class Board {
         void SolveBoard();
         void SearchForWord(int row, int col, string currPrefix);
         void printArray();
-        //void score();
+        int score();
 };
 
 #endif 

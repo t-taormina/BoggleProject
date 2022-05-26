@@ -4,6 +4,7 @@
 Board::Board(){
     fillBoard();
 }
+
 //Parameterized constructor gives predetermined board.
 //If an incorrect amount of charcters are given for the board 
 // then the board will default to a random setup.
@@ -34,7 +35,9 @@ Board::Board(string& myfile, string _userInput){
 
 Board::~Board() {
     dict.deleteNodes(dict.root);
+    dict.deleteNodes(dict.currNode);
     wordsFound.deleteNodes(wordsFound.root);
+    wordsFound.deleteNodes(wordsFound.currNode);
 }
 
 //Generates a random number for use by function 'getRandomLetters'.
@@ -136,18 +139,34 @@ void Board::printArray(){
     }
 }
 
+int Board::getHumanScore() {
+    humanScore = 0;
+    for (int i = 0; i < humanList.size(); i++) {
+        humanScore += score(humanList[i].length());
+    }
+    return humanScore;
+}
 
-//
-//void Board::score(){
-    //for(int i = 0; i < compList.size(); i++){
+int Board::getComputerScore() {
+    computerScore = 0;
+    for (int i = 0; i < compList.size(); i++) {
+        computerScore += score(compList[i].length());
+    }
+    return computerScore;
+}
 
-
-   // }
-   // for(int i = 0; i < humanList.size(); i++){
-
-
- //   }
-//}
+int Board::score(int word_length){
+    if (word_length < 4) { return 0;}
+    else if (word_length == 4) { return 1;}
+    else if (word_length == 5) { return 2;}
+    else if (word_length == 6) { return 3;}
+    else if (word_length == 7) { return 4;}
+    else if (word_length == 8) { return 5;}
+    else if (word_length == 9) { return 6;}
+    else if (word_length == 10) { return 7;}
+    else if (word_length == 11) { return 8;}
+    else { return 9;}
+}
 
 
 
