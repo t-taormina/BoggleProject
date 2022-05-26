@@ -4,7 +4,6 @@
 Board::Board(){
     fillBoard();
 }
-
 //Parameterized constructor gives predetermined board.
 //If an incorrect amount of charcters are given for the board 
 // then the board will default to a random setup.
@@ -35,9 +34,9 @@ Board::Board(string& myfile, string _userInput){
 
 Board::~Board() {
     dict.deleteNodes(dict.root);
-    dict.deleteNodes(dict.currNode);
+    //dict.deleteNodes(dict.currNode);
     wordsFound.deleteNodes(wordsFound.root);
-    wordsFound.deleteNodes(wordsFound.currNode);
+    //wordsFound.deleteNodes(wordsFound.currNode);
 }
 
 //Generates a random number for use by function 'getRandomLetters'.
