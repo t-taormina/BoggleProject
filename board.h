@@ -33,15 +33,15 @@ static string const CUBE_FIFTEEN = "himnqu";
 static string const CUBE_SIXTEEN = "hlnnrz";
       
  
-class Board : public Dictionary{
+class Board {
     public:
-        string result;
+        string result = "cantreadthisshit";
         int humanScore;
         int computerScore;
         Dictionary dict;
+        Dictionary wordsFound;
         vector<string> compList;
         vector<string> humanList;
-        Dictionary wordsFound;
 
         char boardArray[4][4];
         bool checkedArray[4][4] = {{false, false, false, false}, {false, false, false, false}, {false, false, false, false}, {false, false, false, false}};
@@ -52,6 +52,7 @@ class Board : public Dictionary{
  
         Board();
         Board(string& myfile, string _userInput);
+        ~Board();
 
         bool inBounds(int row,int col);
         void fillBoard();
@@ -61,7 +62,7 @@ class Board : public Dictionary{
         void SolveBoard();
         void SearchForWord(int row, int col, string currPrefix);
         void printArray();
-        void score();
+        //void score();
 };
 
 #endif 

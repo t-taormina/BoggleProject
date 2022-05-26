@@ -20,14 +20,15 @@ struct Node {
 class Dictionary { 
 public:
 	Dictionary();
+	~Dictionary();
 	void addWord(string word);
 	bool isWord(string word);
 	bool isPrefix(string word);
 	void PrintWords(string prefix);
+	void deleteNodes(Node*);
 	void PrintHelper(Node *startNode, string prefix);
 	int wordCount();
 
-private:
 	Node *root;
 	Node *currNode;
 	int numWords;

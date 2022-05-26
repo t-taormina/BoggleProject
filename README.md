@@ -21,7 +21,6 @@
 - There are other ways to compile and run the program depending on your OS and setup. This is just one way.
 
 
-
 ## Overveiw
 Boggle is a game played on a square grid onto which you randomly distribute a set of letter cubes. Letter cubes 
 are 6-sided dice with a letter on each side rather than a number. The goal is to find words on the board by tracing 

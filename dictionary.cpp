@@ -7,6 +7,8 @@ Dictionary::Dictionary()
     numWords = 0;
 }
 
+Dictionary::~Dictionary(){}
+
 void Dictionary::addWord(string word)
 {
     currNode = root;
@@ -25,6 +27,14 @@ void Dictionary::addWord(string word)
     
     currNode->flag = true;
     numWords++;
+}
+
+void Dictionary::deleteNodes(Node* node) {
+    if (node == NULL) return;
+    for(int i = 0; i < MAX; i++) {
+        deleteNodes(node->arr[i]);
+    }
+    delete node;
 }
 
 bool Dictionary::isWord(string word)
@@ -46,8 +56,6 @@ bool Dictionary::isWord(string word)
     
     return isWord;
 }
-
-
 
 bool Dictionary::isPrefix(string word)
 {
@@ -85,10 +93,10 @@ void Dictionary::PrintWords(string prefix)
     }
 }
 
-
 void Dictionary::PrintHelper(Node* startNode, string prefix)
 {
     if(startNode == NULL)
+         
         return;
     
     if(startNode->flag)
@@ -100,7 +108,6 @@ void Dictionary::PrintHelper(Node* startNode, string prefix)
         
         PrintHelper(startNode->arr[i], prefix+letter);
     }
-    
 }
 
 int Dictionary::wordCount()

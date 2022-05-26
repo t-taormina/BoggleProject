@@ -2,7 +2,6 @@
 
 //Default constructor gives random board
 Board::Board(){
-    result = getRandomLetters();
     fillBoard();
 }
 //Parameterized constructor gives predetermined board.
@@ -27,10 +26,15 @@ Board::Board(string& myfile, string _userInput){
     }
     
     while(input >> word) {
-        dict.addWord(word);
+       dict.addWord(word);
     }
 
     input.close();
+}
+
+Board::~Board() {
+    dict.deleteNodes(dict.root);
+    wordsFound.deleteNodes(wordsFound.root);
 }
 
 //Generates a random number for use by function 'getRandomLetters'.
@@ -80,10 +84,8 @@ void Board::fillBoard(){
     }
 }
 
-void Board::SolveBoard()
-{
+void Board::SolveBoard() {
     string currPrefix;
- 
     for (int row = 0; row < 4; row++) {
         for (int col = 0; col < 4; col++) {
             SearchForWord(row, col, currPrefix);
@@ -125,7 +127,6 @@ void Board::SearchForWord(int row, int col, string currPrefix)
     SearchForWord(row - 1 , col - 1, currPrefix);
 
     checkedArray[row][col] = false;
-
 }
 
 void Board::printArray(){
@@ -147,10 +148,6 @@ void Board::printArray(){
 
  //   }
 //}
-
-
-
-
 
 
 
