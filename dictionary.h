@@ -5,7 +5,6 @@ using namespace std;
 const int MAX = 26;
 const int ROW = 4;
 const int COL = 4;
-const string myfile = "practice.txt";
 
 struct Node {
 	Node *arr[MAX];
@@ -21,6 +20,7 @@ class Dictionary {
 public:
 	Dictionary();
 	~Dictionary();
+	int counter = 0;
 	void addWord(string word);
 	bool isWord(string word);
 	bool isPrefix(string word);

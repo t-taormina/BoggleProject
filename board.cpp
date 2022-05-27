@@ -2,8 +2,10 @@
 
 //Default constructor gives random board
 Board::Board(){
+    result = getRandomLetters(); 
     fillBoard();
 }
+
 //Parameterized constructor gives predetermined board.
 //If an incorrect amount of charcters are given for the board 
 // then the board will default to a random setup.
@@ -32,16 +34,19 @@ Board::Board(string& myfile, string _userInput){
     input.close();
 }
 
+//Deconstructor
 Board::~Board() {
     dict.deleteNodes(dict.root);
-    //dict.deleteNodes(dict.currNode);
     wordsFound.deleteNodes(wordsFound.root);
-    //wordsFound.deleteNodes(wordsFound.currNode);
+    dict.root = NULL;
+    dict.currNode = NULL;
+    wordsFound.currNode = NULL;
+    wordsFound.root = NULL;
 }
 
 //Generates a random number for use by function 'getRandomLetters'.
 //Used specifically to generate random index for cube array.
-int Board::getRandom() {
+int Board::getRandomIndex() {
     std::random_device os_seed;
     const uint_least32_t seed = os_seed();
     std::mt19937 generator( seed );
@@ -56,7 +61,7 @@ string Board::getRandomLetters() {
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     shuffle(CUBE_ARRAY.begin(), CUBE_ARRAY.end(), std::default_random_engine(seed));
     for (int i = 0; i < NUM_CUBES + 1; i++){
-        _result.push_back(CUBE_ARRAY[i][getRandom()]);
+        _result.push_back(CUBE_ARRAY[i][getRandomIndex()]);
     }
     return _result;
 }
@@ -75,7 +80,9 @@ void Board::displayBoard() {
     }
 }
 
-//Puts the string into an array for computer and human search. 
+//Puts the randomly generated string or the user provided string in an 
+//array which allows for printing the board to the console, solving the board, 
+//and validation of words. 
 void Board::fillBoard(){
     int counter = 0;
     for (int i = 0; i < 4; i++){
@@ -86,16 +93,18 @@ void Board::fillBoard(){
     }
 }
 
-void Board::SolveBoard() {
+//Begins recursive call to find all words from the lexicon that are on the board.
+void Board::solveBoard() {
     string currPrefix;
     for (int row = 0; row < 4; row++) {
         for (int col = 0; col < 4; col++) {
-            SearchForWord(row, col, currPrefix);
+            searchForWord(row, col, currPrefix);
         }
     }
 }
 
-void Board::SearchForWord(int row, int col, string currPrefix)
+//
+void Board::searchForWord(int row, int col, string currPrefix)
 {
     if(row >= 4 || col >= 4)
         return;
@@ -112,29 +121,36 @@ void Board::SearchForWord(int row, int col, string currPrefix)
     if(dict.isWord(currPrefix)) {
         if(!wordsFound.isWord(currPrefix)) {
             wordsFound.addWord(currPrefix);
-            compList.push_back(currPrefix);
+            computerList.push_back(currPrefix);
         }
     }
     
     currPrefix = currPrefix + boardArray[row][col];
     checkedArray[row][col] = true;
     
-    SearchForWord(row , col - 1, currPrefix);
-    SearchForWord(row , col + 1, currPrefix);
-    SearchForWord(row - 1 , col, currPrefix);
-    SearchForWord(row + 1 , col, currPrefix);
-    SearchForWord(row + 1 , col + 1, currPrefix);
-    SearchForWord(row + 1 , col - 1, currPrefix);
-    SearchForWord(row - 1 , col + 1, currPrefix);
-    SearchForWord(row - 1 , col - 1, currPrefix);
+    searchForWord(row , col - 1, currPrefix);
+    searchForWord(row , col + 1, currPrefix);
+    searchForWord(row - 1 , col, currPrefix);
+    searchForWord(row + 1 , col, currPrefix);
+    searchForWord(row + 1 , col + 1, currPrefix);
+    searchForWord(row + 1 , col - 1, currPrefix);
+    searchForWord(row - 1 , col + 1, currPrefix);
+    searchForWord(row - 1 , col - 1, currPrefix);
 
     checkedArray[row][col] = false;
 }
 
-void Board::printArray(){
-    int total = compList.size();
+void Board::printHumanArray(){
+    int total = humanList.size();
     for (int i = 0; i < total; i++){
-        cout << compList[i] << endl;
+        cout << humanList[i] << endl;
+    }
+}
+
+void Board::printComputerArray(){
+    int total = computerList.size();
+    for (int i = 0; i < total; i++){
+        cout << computerList[i] << endl;
     }
 }
 
@@ -148,8 +164,8 @@ int Board::getHumanScore() {
 
 int Board::getComputerScore() {
     computerScore = 0;
-    for (int i = 0; i < compList.size(); i++) {
-        computerScore += score(compList[i].length());
+    for (int i = 0; i < computerList.size(); i++) {
+        computerScore += score(computerList[i].length());
     }
     return computerScore;
 }

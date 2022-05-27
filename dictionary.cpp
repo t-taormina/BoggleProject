@@ -19,6 +19,7 @@ void Dictionary::addWord(string word)
         
         if(currNode->arr[index] == NULL) {
             currNode->arr[index] = new Node;
+            counter++;
             (currNode->arr[index])->flag = false;
         }
         
@@ -27,14 +28,19 @@ void Dictionary::addWord(string word)
     
     currNode->flag = true;
     numWords++;
+    currNode = NULL;
 }
 
 void Dictionary::deleteNodes(Node* node) {
-    if (node == NULL) return;
     for(int i = 0; i < MAX; i++) {
-        deleteNodes(node->arr[i]);
+        if (node->arr[i] != NULL) {
+            deleteNodes(node->arr[i]);
+            delete node->arr[i];
+            counter--;
+        } 
     }
-    delete node;
+    //cout << "Counter" << endl;
+    //cout << counter << endl;
 }
 
 bool Dictionary::isWord(string word)
@@ -54,6 +60,7 @@ bool Dictionary::isWord(string word)
         
     }
     
+    currNode = NULL;
     return isWord;
 }
 
@@ -71,6 +78,7 @@ bool Dictionary::isPrefix(string word)
         currNode = currNode->arr[index];
     }
     
+    currNode = NULL;
     return true;
 }
 
@@ -91,6 +99,7 @@ void Dictionary::PrintWords(string prefix)
         
         PrintHelper(currNode->arr[i], prefix+letter);
     }
+    currNode = NULL;
 }
 
 void Dictionary::PrintHelper(Node* startNode, string prefix)

@@ -35,12 +35,12 @@ static string const CUBE_SIXTEEN = "hlnnrz";
  
 class Board {
     public:
-        string result = "cantreadthisshit";
+        string result;
         int humanScore;
         int computerScore;
         Dictionary dict;
         Dictionary wordsFound;
-        vector<string> compList;
+        vector<string> computerList;
         vector<string> humanList;
 
         char boardArray[4][4];
@@ -54,18 +54,23 @@ class Board {
         Board(string& myfile, string _userInput);
         ~Board();
 
-        int getHumanScore();
-        int getComputerScore();
-        int score(int word_length);
-        bool inBounds(int row,int col);
         void fillBoard();
         void displayBoard();  
+        bool inBounds(int row,int col);
         string getRandomLetters();
-        int getRandom();
-        void SolveBoard();
-        void SearchForWord(int row, int col, string currPrefix);
-        void printArray();
+        int getRandomIndex();
+
+        int getHumanScore();
+        void humanPlayersTurn();
+
+        int getComputerScore();
+        void solveBoard();
+        void searchForWord(int row, int col, string currPrefix);
+
+        int score(int word_length);
         int score();
+        void printComputerArray();
+        void printHumanArray();
 };
 
 #endif 
