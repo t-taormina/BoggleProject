@@ -8,17 +8,13 @@ void processChoice(bool&, int);
 void clearBuffer(); 
 void regularPlay();
 void inputPlay();
+void displayWelcome();
 
 int main( void ) {
   int menu_choice;
   bool flag = true;
-  cout << " ____________" << endl;
-  cout << "|  ________  |" << endl;
-  cout << "| | Boggle!| |" << endl;
-  cout << "| |________| |" << endl;
-  cout << "|____________|" << endl;
-  
-  cout << "Welcome to boggle!" << endl;
+
+  displayWelcome();
   cout << "Press enter to continue..." << endl;
   while ( getchar() != '\n');
   
@@ -28,7 +24,6 @@ int main( void ) {
         processChoice(flag, menu_choice);
     }
 
-  
   return 0;
 }
 
@@ -67,7 +62,7 @@ void processChoice (bool& flag, int menu_choice)
           break;
 
         case 2: 
-          manualPlay();
+          inputPlay();
           break;
 
         case 3:
@@ -102,7 +97,6 @@ void regularPlay() {
   Board board1(myfile, "");
   board1.displayBoard();
   board1.solveBoard();
-  board1.printComputerArray();
   int x = board1.getComputerScore();
   cout << "Computer score is: ";
   cout << x << endl;
@@ -110,4 +104,14 @@ void regularPlay() {
 
 void inputPlay() {
   cout << "input play" << endl;
+}
+
+void displayWelcome() {
+  cout << " ____________" << endl;
+  cout << "|  ________  |" << endl;
+  cout << "| | Boggle!| |" << endl;
+  cout << "| |________| |" << endl;
+  cout << "|____________|" << endl;
+  cout << "\n\n";
+  cout << "Welcome to boggle!" << endl;
 }
