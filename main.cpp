@@ -6,8 +6,10 @@
 void displayMenu(int&);
 void processChoice(bool&, int);
 void clearBuffer(); 
+void userPlay(Board& _board);
 void regularPlay();
 void inputPlay();
+string grabInput();
 void displayWelcome();
 
 int main( void ) {
@@ -91,15 +93,52 @@ void clearBuffer()
 	} while (c != '\n' && c != EOF);
 }
 
+string grabInput() {
+  string _input;
+  cout << "Enter a word: ";
+  cin >> _input;
+  clearBuffer();
+  return _input;
+}
+
+bool checkValidWord(string _word, Board& _board) {
+  bool success = false;
+  for (int i = 0; i < _board.computerList.size(); i++) {
+    if (_word == _board.computerList[i])
+      success = true;
+  }
+  return success;
+}
+
+void userPlay(Board& _board) {
+  bool flag = true;
+  string _input;
+  int _continue;
+
+  while(flag) {
+    _input = grabInput();
+    bool check = checkValidWord(_input, _board);
+    if(check) {_board.humanList.push_back(_input);}
+    cout << "Enter 0 when you would like to end your turn: " << endl;
+    cin >> _continue;
+    if (_continue == 0) { flag = false; }
+  }
+  cout << "Nice playing! Lets see how well you can find words..." << endl;
+}
+
 void regularPlay() {
   cout << "Lets play!" << endl;
   string myfile = "Dictionary.txt";
-  Board board1(myfile, "");
-  board1.displayBoard();
-  board1.solveBoard();
-  int x = board1.getComputerScore();
-  cout << "Computer score is: ";
-  cout << x << endl;
+  Board _board(myfile, "");
+  _board.displayBoard();
+  _board.solveBoard();
+  userPlay(_board);
+  cout << "***Human array***" << endl;
+  _board.printHumanArray();
+  cout << "\n\n" << endl;
+
+  cout << "***Computer array***" << endl;
+  _board.printComputerArray();
 }
 
 void inputPlay() {
