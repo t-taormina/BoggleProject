@@ -200,7 +200,7 @@ void compareScores(Board& _board) {
     cout << "IT'S A DRAW! WELL DONE. THANKS FOR PLAYING!" << endl;
 
   } else {
-    cout << "YOU WON!! YOU SPENT SOME TIME HERE. THANKS FOR PLAYING!" << endl;
+    cout << "WINNER!! YOU SPENT SOME TIME HERE. THANKS FOR PLAYING!" << endl;
   }
 
   cout << "Human score: " << h_score << endl;
