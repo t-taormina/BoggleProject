@@ -7,6 +7,7 @@ void displayMenu(int&);
 void processChoice(bool&, int);
 void clearBuffer(); 
 void userPlay(Board& _board);
+void compareScores(Board& _board);
 void regularPlay();
 void inputPlay();
 string grabInput();
@@ -106,6 +107,11 @@ bool checkValidWord(string _word, Board& _board) {
   for (int i = 0; i < _board.computerList.size(); i++) {
     if (_word == _board.computerList[i])
       success = true;
+    for (int j = 0; j < _board.humanList.size(); j++) {
+      if(_word == _board.humanList[j]) {
+        success = false;
+      }
+    }
   }
   return success;
 }
@@ -113,36 +119,94 @@ bool checkValidWord(string _word, Board& _board) {
 void userPlay(Board& _board) {
   bool flag = true;
   string _input;
-  int _continue;
+  string _continue;
 
   while(flag) {
     _input = grabInput();
+    transform(_input.begin(), _input.end(), _input.begin(), ::tolower);
     bool check = checkValidWord(_input, _board);
-    if(check) {_board.humanList.push_back(_input);}
-    cout << "Enter 0 when you would like to end your turn: " << endl;
+    if(check) {
+      _board.humanList.push_back(_input);
+      cout << "VALID WORD!" << endl;
+    }
+    else { cout << "INVALID WORD!" << endl; }
+    cout << "Enter 0 to stop. Any other number to continue: ";
     cin >> _continue;
-    if (_continue == 0) { flag = false; }
+    if (_continue == "0") { flag = false; }
   }
-  cout << "Nice playing! Lets see how well you can find words..." << endl;
+  cout << "\n\nNice playing! Tallying scores..." << endl;
+  clearBuffer();
+  cout << "Press enter to continue..." << endl;
+  while ( getchar() != '\n');
 }
 
 void regularPlay() {
   cout << "Lets play!" << endl;
   string myfile = "Dictionary.txt";
-  Board _board(myfile, "");
+  Board _board;
   _board.displayBoard();
   _board.solveBoard();
   userPlay(_board);
-  cout << "***Human array***" << endl;
+  compareScores(_board);
+  cout << "***Your word list***" << endl;
   _board.printHumanArray();
   cout << "\n\n" << endl;
 
-  cout << "***Computer array***" << endl;
+  cout << "***Computer found words***" << endl;
   _board.printComputerArray();
 }
 
 void inputPlay() {
-  cout << "input play" << endl;
+  string _input;
+  cout << "Enter the characters that you would like to use in a single entry." << endl;
+  cout << "You will be entering characters from left to right and from top to bottom. " << endl;
+  cout << "This means that the first character will be the top left and the last character will " << endl;
+  cout << "be the bottom right." << endl;
+  cout << "Remember, you must enter 16 characters or we will give you a random board!" << endl;
+  cout << "Enter the characters of your choice: " << endl; 
+  cin >> _input;
+  string myfile = "Dictionary.txt";
+  Board _board(myfile, _input);
+  _board.displayBoard();
+  _board.solveBoard();
+  userPlay(_board);
+  
+  cout << "***Your word list***" << endl;
+  _board.printHumanArray();
+  cout << "\n\n" << endl;
+  
+  cout << "Press enter to continue..." << endl;
+  clearBuffer();
+  while ( getchar() != '\n');
+
+  cout << "***Computer found words***" << endl;
+  _board.printComputerArray();
+
+  cout << "Press enter to continue..." << endl;
+  clearBuffer();
+  while ( getchar() != '\n');
+
+  compareScores(_board);
+}
+
+void compareScores(Board& _board) {
+  int h_score, c_score;
+  h_score = _board.getHumanScore();
+  c_score = _board.getComputerScore();
+  if (c_score > h_score) {
+    cout << "GOOD TRY. THANKS FOR PLAYING!" << endl;
+    
+  } else if (c_score == h_score) {
+    cout << "IT'S A DRAW! WELL DONE. THANKS FOR PLAYING!" << endl;
+
+  } else {
+    cout << "YOU WON!! YOU SPENT SOME TIME HERE. THANKS FOR PLAYING!" << endl;
+  }
+
+  cout << "Human score: " << h_score << endl;
+  cout << "Computer score: " << c_score << endl;
+  cout << "Press enter to continue..." << endl;
+  while ( getchar() != '\n');
 }
 
 void displayWelcome() {

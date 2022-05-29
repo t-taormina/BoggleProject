@@ -4,6 +4,20 @@
 Board::Board(){
     result = getRandomLetters(); 
     fillBoard();
+    ifstream input("Dictionary.txt");
+    string word;
+    
+    if(!input) {
+        cout << "Error reading file" << endl;
+        return;
+    }
+    
+    while(input >> word) {
+       dict.addWord(word);
+    }
+
+    input.close();
+
 }
 
 //Parameterized constructor gives predetermined board.
@@ -16,6 +30,8 @@ Board::Board(string& myfile, string _userInput){
         fillBoard();
     }
     else{
+        cout << "You entered the incorrect number of terms. Here is a random board." << endl;
+        cout << "End the game early and try again... Or see if you can win! :) " << endl;
         result = getRandomLetters();
         fillBoard();
     }
