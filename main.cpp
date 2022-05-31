@@ -32,10 +32,8 @@ int main( void ) {
   return 0;
 }
 
-
-void displayMenu(int& menu_choice) 
-{
-     //Displays the menu of functions for the user to choose from.
+//Displays the menu of functions for the user to choose from.
+void displayMenu(int& menu_choice) {
     menu_choice = 0;
     cout << "==================================================================\n";
     cout << "                         MENU" << endl;
@@ -53,7 +51,7 @@ void displayMenu(int& menu_choice)
     }
 }
 
-  
+//Provides option processing for the menu 
 void processChoice (bool& flag, int menu_choice)
 {
     //Takes in user input for menu choice and calls the appropriate function.
@@ -95,6 +93,7 @@ void clearBuffer() {
 	} while (c != '\n' && c != EOF);
 }
 
+//Gathers string user input
 string grabInput() {
   string _input;
   cout << "Enter a word: ";
@@ -103,6 +102,7 @@ string grabInput() {
   return _input;
 }
 
+//Provides the control flow for the user interaction portion of gameplay.
 void userPlay(Board& _board) {
   bool flag = true;
   string _input;
@@ -127,6 +127,7 @@ void userPlay(Board& _board) {
   while ( getchar() != '\n');
 }
 
+//Provides control flow for gameplay when there is no specified board from the user.
 void regularPlay() {
   cout << "Lets play!" << endl;
   string myfile = "Dictionary.txt";
@@ -138,6 +139,7 @@ void regularPlay() {
    _board.printArrays();
 }
 
+//Provides control flow for gameplay when there is a specified board from the user.
 void inputPlay() {
   string _input;
   cout << "Enter the characters that you would like to use in a single entry." << endl;
@@ -156,6 +158,7 @@ void inputPlay() {
    _board.printArrays();
 }
 
+//Compares scores of computer and user. Displays score values to console.
 void compareScores(Board& _board) {
   int h_score, c_score;
   h_score = _board.getScoreHuman();
@@ -176,6 +179,7 @@ void compareScores(Board& _board) {
   while ( getchar() != '\n');
 }
 
+//Welcome message
 void displayWelcome() {
   cout << " ____________" << endl;
   cout << "|  ________  |" << endl;

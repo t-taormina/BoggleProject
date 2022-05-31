@@ -160,7 +160,8 @@ void Board::computerWordSearch() {
               << "elapsed time: " << elapsed_seconds.count() << "s\n";
 }
 
-//
+//Recursive call to search the board for a word based on words in the dictionary.
+//Includes bounds checking and marking of 'blocks' that have already been visited.
 void Board::searchForWord(int row, int col, string currPrefix)
 {
     if(row >= 4 || col >= 4)
@@ -197,6 +198,7 @@ void Board::searchForWord(int row, int col, string currPrefix)
     checkedArray[row][col] = false;
 }
 
+//Prints arrays of words found for both computer and user.
 void Board::printArrays(){
     cout << "***Your word list***" << endl;
     int total_hum = humanList.size();
@@ -219,6 +221,7 @@ void Board::printArrays(){
     }
 }
 
+//Getter
 int Board::getScoreHuman() {
     humanScore = 0;
     for (int i = 0; i < humanList.size(); i++) {
@@ -227,6 +230,7 @@ int Board::getScoreHuman() {
     return humanScore;
 }
 
+//Getter
 int Board::getScoreComputer() {
     computerScore = 0;
     for (int i = 0; i < computerList.size(); i++) {
@@ -235,6 +239,7 @@ int Board::getScoreComputer() {
     return computerScore;
 }
 
+//Provides logic for scoring words based on their length.
 int Board::score(int word_length){
     if (word_length < 4) { return 0;}
     else if (word_length == 4) { return 1;}
@@ -264,9 +269,7 @@ bool Board::humanWordSearch(string _word) {
     return success;
 }
 
-
 //Stream method for outputting Boggle Board
-
 std::ostream& operator<<(std::ostream& stream, const
     Board& boggleBoard) {
 

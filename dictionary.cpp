@@ -9,6 +9,7 @@ Dictionary::Dictionary()
 
 Dictionary::~Dictionary(){}
 
+//Inputs words from the lexicon to the dictionary.
 void Dictionary::addWord(string word)
 {
     currNode = root;
@@ -39,10 +40,9 @@ void Dictionary::deleteNodes(Node* node) {
             counter--;
         } 
     }
-    //cout << "Counter" << endl;
-    //cout << counter << endl;
 }
 
+//Checks to see if a given string from the board is a word in the lexicon.
 bool Dictionary::isWord(string word)
 {
     currNode = root;
@@ -64,6 +64,9 @@ bool Dictionary::isWord(string word)
     return isWord;
 }
 
+//Checks words as they are put together from the board. If a prefix doesn't match 
+// any words in the dictionary, that prefix is abandoned and the next search is 
+// begun.
 bool Dictionary::isPrefix(string word)
 {
     currNode = root;
@@ -82,6 +85,7 @@ bool Dictionary::isPrefix(string word)
     return true;
 }
 
+//Displays all words from the dictionary.
 void Dictionary::PrintWords(string prefix)
 {
     currNode = root;
@@ -119,6 +123,7 @@ void Dictionary::PrintHelper(Node* startNode, string prefix)
     }
 }
 
+//Total count of dictionary size.
 int Dictionary::wordCount()
 {
     return numWords;
