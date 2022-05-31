@@ -50,6 +50,40 @@ Board::Board(string& myfile, string _userInput){
     input.close();
 }
 
+//Copy constructor
+Board::Board(const Board& copy) {
+    result = copy.result;
+    humanScore = copy.humanScore;
+    computerScore = copy.computerScore;
+    dict = copy.dict;
+    wordsFound = copy.wordsFound;
+    computerList = copy.computerList;
+    humanList = copy.humanList;
+}
+
+//Move constructor
+Board::Board(Board&& move) noexcept {
+    *this = move;
+}
+
+//Copy assignment operator
+Board& Board::operator=(const Board& copy) { // Copy = operator
+    result = copy.result;
+    humanScore = copy.humanScore;
+    computerScore = copy.computerScore;
+    dict = copy.dict;
+    wordsFound = copy.wordsFound;
+    computerList = copy.computerList;
+    humanList = copy.humanList;
+    return *this;
+}
+
+//Move assignment operator
+ Board& Board::operator=(Board&& move) noexcept { // Move = operator
+    *this = move;
+    return *this;
+}
+
 //Deconstructor
 Board::~Board() {
     dict.deleteNodes(dict.root);
@@ -163,6 +197,10 @@ void Board::printArrays(){
     for (int i = 0; i < total_hum; i++){
         cout << humanList[i] << endl;
     }
+
+    cout << "Press enter to continue..." << endl;
+    while ( getchar() != '\n');
+
     cout << "\n\n" << endl;
 
     cout << "***Computer found words***" << endl;
@@ -201,7 +239,6 @@ int Board::score(int word_length){
     else { return 9;}
 }
 
-
 //Function checks whether a word is a valid word on the Boggle board
 //Return Type:bool
 bool Board::checkValidWord(string _word) {
@@ -218,6 +255,12 @@ bool Board::checkValidWord(string _word) {
     return success;
 }
 
-
+void Board::clearBuffer() {
+    // clears buffer after menu choice so as not to interfere with the following user inputs.
+	char c;
+	do {
+		c = getchar();
+	} while (c != '\n' && c != EOF);
+}
 
 

@@ -1,4 +1,4 @@
-//Boggle Project CST136 by Freddy, Rayyan, and Tyler
+//Boggle Project CST136
 //tyler.taormina@oit.edu
 //freddy.hernandezjimenez@oit.edu
 //rayyan.ansari@oit.edu
@@ -87,9 +87,8 @@ void processChoice (bool& flag, int menu_choice)
     }
 }
 
-void clearBuffer() 
-{
-    // clears buffer after menu choice so as not to interfere with the following user inputs.
+//Clears buffer after menu choice so as not to interfere with the following user inputs.
+void clearBuffer() {
 	char c;
 	do {
 		c = getchar();
@@ -153,23 +152,8 @@ void inputPlay() {
   _board.displayBoard();
   _board.solveBoard();
   userPlay(_board);
-  
-  cout << "***Your word list***" << endl;
-  _board.printHumanArray();
-  cout << "\n\n" << endl;
-  
-  cout << "Press enter to continue..." << endl;
-  clearBuffer();
-  while ( getchar() != '\n');
-
-  cout << "***Computer found words***" << endl;
-  _board.printComputerArray();
-
-  cout << "Press enter to continue..." << endl;
-  clearBuffer();
-  while ( getchar() != '\n');
-
   compareScores(_board);
+   _board.printArrays();
 }
 
 void compareScores(Board& _board) {

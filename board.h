@@ -52,6 +52,11 @@ class Board {
  
         Board();
         Board(string& myfile, string _userInput);
+        Board(const Board& copy);
+        Board(Board&& move) noexcept;
+        Board& operator=(const Board& copy);
+        Board& operator=(Board&& move) noexcept;
+
         ~Board();
 
         void fillBoard();
@@ -71,6 +76,7 @@ class Board {
         int score(int word_length);
         int score();
         void printArrays();
+        void clearBuffer();
 };
 
 #endif 
