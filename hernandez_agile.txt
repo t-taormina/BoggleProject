@@ -1,0 +1,90 @@
+*AGILE QUESTIONS*
+
+
+April 13 
+What SPECIFIC task will you complete in the next half hour? 
+	We will be separating the work 
+What do you know about this SPECIFIC task? 
+	We know what each person wants to work on
+What DON'T you know about this SPECIFIC task? 
+	I don’t know how to incorporate the functions into the class just yet
+
+
+April 20
+What SPECIFIC task will you complete in the next half hour? 
+	I will begin to work on my functions
+What do you know about this SPECIFIC task? 
+	I know how how the functions work and how they will be used
+What DON'T you know about this SPECIFIC task? 
+	I am not sure if we will need more functions for the class
+
+
+April 25
+What SPECIFIC task will you complete in the next half hour? 
+	I will begin to create other function to check for bounds
+What do you know about this SPECIFIC task? 
+	I know the board need to have bounds 
+What DON'T you know about this SPECIFIC task? 
+	I am not sure how I will be implementing it yet
+
+
+April 30
+What SPECIFIC task will you complete in the next half hour? 
+	Me, Tyler, and Rayyan will be going over code together
+What do you know about this SPECIFIC task? 
+	I know the functions we will need to work on have some errors
+What DON'T you know about this SPECIFIC task? 
+	I don’t know how to fix these errors right now
+
+
+May 4
+What SPECIFIC task will you complete in the next half hour? 
+	I want to be able to go over more code with the team
+What do you know about this SPECIFIC task? 
+	I know there are still functions of code that are having issue
+What DON'T you know about this SPECIFIC task? 
+	I am not sure if these errors will be fixed or if we need to restart the function
+
+
+May 11 
+What SPECIFIC task will you complete in the next half hour? 
+	We are going to add more functions for the program
+What do you know about this SPECIFIC task? 
+	We know that there are more functions we have to add
+What DON'T you know about this SPECIFIC task? 
+	We don’t know where in our program we are going to implement each function as of right now
+
+
+May 18
+What SPECIFIC task will you complete in the next half hour? 
+	We want to be able to search the library efficiently 
+What do you know about this SPECIFIC task? 
+	We know we have to use a binary search tree to get the best results
+What DON'T you know about this SPECIFIC task? 
+	I don’t know how to do a binary search tree to well, but Tyler has a plan for it
+
+May 25
+What SPECIFIC task will you complete in the next half hour? 
+	We want to be able to randomize the board
+What do you know about this SPECIFIC task? 
+	We know how to randomize the board
+What DON'T you know about this SPECIFIC task? 
+	We don’t know if it is going to work
+
+
+May 28
+What SPECIFIC task will you complete in the next half hour? 
+	We finally got mostly everything to work and now we are going to go over functions for understanding
+What do you know about this SPECIFIC task? 
+	We know the functions work 
+What DON'T you know about this SPECIFIC task? 
+	I don’t know how some functions work so Tyler will explain them 
+
+
+May 30
+What SPECIFIC task will you complete in the next half hour? 
+	I want to start creating a plan for the presention
+What do you know about this SPECIFIC task? 
+	I know that we have 5-10 min to talk
+What DON'T you know about this SPECIFIC task? 
+	I am not to sure how to separate who talks about what 
