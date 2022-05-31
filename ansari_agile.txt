@@ -1,0 +1,88 @@
+April 13 
+What SPECIFIC task will you complete in the next half hour? 
+	Dividing up tasks between my team members and I.
+What do you know about this SPECIFIC task? 
+	The roles of each person in the group
+What DON'T you know about this SPECIFIC task? 
+	The pseudocode or logic behind the work.
+
+
+April 20
+What SPECIFIC task will you complete in the next half hour? 
+	I will design the logic for the functions
+What do you know about this SPECIFIC task? 
+	The functions use and purpose
+What DON'T you know about this SPECIFIC task? 
+	I am not sure if we will need more functions for the class other than the one
+
+
+April 25
+What SPECIFIC task will you complete in the next half hour? 
+	Start the coding of the functions
+What do you know about this SPECIFIC task? 
+	The Logic and implementation
+What DON'T you know about this SPECIFIC task? 
+	Possible errors I may run into
+
+
+April 30
+What SPECIFIC task will you complete in the next half hour? 
+	Tyler, Freddy, and I will be reviewing the code together
+What do you know about this SPECIFIC task? 
+	There are some compatibility issues between our functions
+What DON'T you know about this SPECIFIC task? 
+	The solution to those errors
+
+
+May 4
+What SPECIFIC task will you complete in the next half hour? 
+	Continue debugging for compatibility
+What do you know about this SPECIFIC task? 
+	Issues with functions
+What DON'T you know about this SPECIFIC task? 
+	The fix to the issues
+
+
+May 11 
+What SPECIFIC task will you complete in the next half hour? 
+	We are going to add more functions 
+What do you know about this SPECIFIC task? 
+	We know that there are more functions needed
+What DON'T you know about this SPECIFIC task? 
+	Where in our program we are going to implement each function 
+
+
+May 18
+What SPECIFIC task will you complete in the next half hour? 
+	Searching the library efficiently
+What do you know about this SPECIFIC task? 
+	Binary search tree is needed to achieve the results
+What DON'T you know about this SPECIFIC task? 
+	The implementation if the binary search tree
+
+May 25
+What SPECIFIC task will you complete in the next half hour? 
+	Randomize the Boggle board
+What do you know about this SPECIFIC task? 
+	We know how to randomize the board
+What DON'T you know about this SPECIFIC task? 
+	Whether it will work or not
+
+
+May 28
+What SPECIFIC task will you complete in the next half hour? 
+	Going over final checks
+What do you know about this SPECIFIC task? 
+	OSTREAM operator not allowing uppercase function directly
+What DON'T you know about this SPECIFIC task? 
+	How exactly to fix the issue, but I have a plan in mind
+
+May 30
+What SPECIFIC task will you complete in the next half hour? 
+	Create a plan for the presentation and the Final Check
+What do you know about this SPECIFIC task? 
+	We have 5-10 min to talk
+What DON'T you know about this SPECIFIC task? 
+	The separation of tasks in the presentation
+
+
