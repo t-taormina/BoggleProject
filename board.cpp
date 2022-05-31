@@ -17,7 +17,6 @@ Board::Board(){
     }
 
     input.close();
-
 }
 
 //Parameterized constructor gives predetermined board.
