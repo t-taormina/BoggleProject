@@ -56,6 +56,7 @@ class Board {
 
         void fillBoard();
         void displayBoard();  
+        bool checkValidWord(string _word);
         bool inBounds(int row,int col);
         string getRandomLetters();
         int getRandomIndex();
@@ -69,8 +70,7 @@ class Board {
 
         int score(int word_length);
         int score();
-        void printComputerArray();
-        void printHumanArray();
+        void printArrays();
 };
 
 #endif 

@@ -1,5 +1,7 @@
-//Boggle Project CST136
-//
+//Boggle Project CST136 by Freddy, Rayyan, and Tyler
+//tyler.taormina@oit.edu
+//freddy.hernandezjimenez@oit.edu
+//rayyan.ansari@oit.edu
 
 #include "board.h"
   
@@ -102,20 +104,6 @@ string grabInput() {
   return _input;
 }
 
-bool checkValidWord(string _word, Board& _board) {
-  bool success = false;
-  for (int i = 0; i < _board.computerList.size(); i++) {
-    if (_word == _board.computerList[i])
-      success = true;
-    for (int j = 0; j < _board.humanList.size(); j++) {
-      if(_word == _board.humanList[j]) {
-        success = false;
-      }
-    }
-  }
-  return success;
-}
-
 void userPlay(Board& _board) {
   bool flag = true;
   string _input;
@@ -124,7 +112,7 @@ void userPlay(Board& _board) {
   while(flag) {
     _input = grabInput();
     transform(_input.begin(), _input.end(), _input.begin(), ::tolower);
-    bool check = checkValidWord(_input, _board);
+    bool check = _board.checkValidWord(_input);
     if(check) {
       _board.humanList.push_back(_input);
       cout << "VALID WORD!" << endl;
@@ -148,12 +136,7 @@ void regularPlay() {
   _board.solveBoard();
   userPlay(_board);
   compareScores(_board);
-  cout << "***Your word list***" << endl;
-  _board.printHumanArray();
-  cout << "\n\n" << endl;
-
-  cout << "***Computer found words***" << endl;
-  _board.printComputerArray();
+   _board.printArrays();
 }
 
 void inputPlay() {

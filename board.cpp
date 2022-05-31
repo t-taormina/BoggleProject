@@ -76,7 +76,7 @@ string Board::getRandomLetters() {
     string _result = "";
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     shuffle(CUBE_ARRAY.begin(), CUBE_ARRAY.end(), std::default_random_engine(seed));
-    for (int i = 0; i < NUM_CUBES + 1; i++){
+    for (int i = 0; i < NUM_CUBES; i++){
         _result.push_back(CUBE_ARRAY[i][getRandomIndex()]);
     }
     return _result;
@@ -156,16 +156,18 @@ void Board::searchForWord(int row, int col, string currPrefix)
     checkedArray[row][col] = false;
 }
 
-void Board::printHumanArray(){
-    int total = humanList.size();
-    for (int i = 0; i < total; i++){
+void Board::printArrays(){
+    cout << "***Your word list***" << endl;
+    int total_hum = humanList.size();
+
+    for (int i = 0; i < total_hum; i++){
         cout << humanList[i] << endl;
     }
-}
+    cout << "\n\n" << endl;
 
-void Board::printComputerArray(){
-    int total = computerList.size();
-    for (int i = 0; i < total; i++){
+    cout << "***Computer found words***" << endl;
+    int total_comp = computerList.size();
+    for (int i = 0; i < total_comp; i++){
         cout << computerList[i] << endl;
     }
 }
@@ -197,6 +199,23 @@ int Board::score(int word_length){
     else if (word_length == 10) { return 7;}
     else if (word_length == 11) { return 8;}
     else { return 9;}
+}
+
+
+//Function checks whether a word is a valid word on the Boggle board
+//Return Type:bool
+bool Board::checkValidWord(string _word) {
+    bool success = false;
+    for (int i = 0; i < computerList.size(); i++) {
+        if (_word == computerList[i])
+            success = true;
+        for (int j = 0; j < humanList.size(); j++) {
+            if (_word == humanList[j]) {
+                success = false;
+            }
+        }
+    }
+    return success;
 }
 
 
