@@ -1,4 +1,5 @@
 *AGILE QUESTIONS*
+Tyler Taormina
 
 
 April 13 
@@ -36,54 +37,56 @@ What do you know about this SPECIFIC task?
 What DON'T you know about this SPECIFIC task? 
 - I don't know how many issues we will uncover.
 
+
 May 4
 What SPECIFIC task will you complete in the next half hour? 
-- 
+- We will have another meeting to go over the next set of methods/functions that need to be completed.
 What do you know about this SPECIFIC task? 
-	I know there are still functions of code that are having issue
+- We know what everyone thinks they would like to build.
 What DON'T you know about this SPECIFIC task? 
-	I am not sure if these errors will be fixed or if we need to restart the function
+- We don't know exactly how we will impelement the methods/functions.
 
 
 May 11 
 What SPECIFIC task will you complete in the next half hour? 
-	We are going to add more functions for the program
+- I will work on solving the board as the computer.
 What do you know about this SPECIFIC task? 
-	We know that there are more functions we have to add
+- I know I will be using recursion and bound checking to solve the board.
 What DON'T you know about this SPECIFIC task? 
-	We don’t know where in our program we are going to implement each function as of right now
+- I don't know how long this will take me.
 
 
 May 18
 What SPECIFIC task will you complete in the next half hour? 
-	We want to be able to search the library efficiently 
+- I will continue fine tuning the functions for searching for words from the lexicon.
 What do you know about this SPECIFIC task? 
-	We know we have to use a binary search tree to get the best results
+- I know that I will need to consider multiple edge cases and prepare the program for those situations.
 What DON'T you know about this SPECIFIC task? 
-	I don’t know how to do a binary search tree to well, but Tyler has a plan for it
+- I don't know if the solution will present new bugs.
 
 May 25
 What SPECIFIC task will you complete in the next half hour? 
-	We want to be able to randomize the board
+- I will work on controlling the flow of the game play. 
 What do you know about this SPECIFIC task? 
-	We know how to randomize the board
+- I know there will need to be multiple gameplay paths depending on the user input.
 What DON'T you know about this SPECIFIC task? 
-	We don’t know if it is going to work
+- I don't know how I will format output to the console so that gameplay and rules are clear to the user.
 
 
 May 28
 What SPECIFIC task will you complete in the next half hour? 
-	We finally got mostly everything to work and now we are going to go over functions for understanding
+- Today we will work on explaining functions to one another and writing comments to clarify. 
 What do you know about this SPECIFIC task? 
-	We know the functions work 
+- We know that we will need to go over all functions.
 What DON'T you know about this SPECIFIC task? 
-	I don’t know how some functions work so Tyler will explain them 
+- We don't know if we will see anything that could be improved or renamed. 
 
 
 May 30
 What SPECIFIC task will you complete in the next half hour? 
-	I want to start creating a plan for the presention
+- We will go over some testing code as well as presentation responsibility.
 What do you know about this SPECIFIC task? 
-	I know that we have 5-10 min to talk
+- We know that we will need to reach a certain time during our presentation.
 What DON'T you know about this SPECIFIC task? 
-	I am not to sure how to separate who talks about what 
+- We don't know the order of our presentation.
+
