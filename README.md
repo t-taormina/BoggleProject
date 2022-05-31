@@ -17,6 +17,15 @@
 	``` 
 	./main
 	```
+- If you want to run the test suite, run the command...
+```
+ 	g++ -std=c++11 test.cpp board.cpp dictionary.cpp -o test 
+```
+- then run the command... 
+	``` 
+	./test
+	```
+
 - Program should output to the terminal.
 - There are other ways to compile and run the program depending on your OS and setup. This is just one way.
 
