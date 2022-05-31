@@ -1,0 +1,51 @@
+*MEETINGS NOTES*
+
+
+April 13 (Freddy)
+Jotted down contact info and began going over pseudo code/ flow charts 
+and how we are going to structure our project, also decided who would do what in the project.
+
+April 20(Tyler)
+Began by going over certain questions we had about the program,
+We then went over new functions we would be working on and assigned them. 
+Also chatted a bit about other work needed for the project
+
+April 25(Rayyan)
+We went over more functions, also had Tyler and Freddy help me 
+With understanding their functions we also went over more code 
+To better understand how the board will work
+
+April 30(Freddy)
+Me and Tyler began going over functions that would help keep the board in bounds 
+And rayyan helped fix some errors while also explaining them!
+
+
+May 4(Tyler)
+We began going over more code to help build the board
+We then went over more error we were running into during our testing phase
+
+
+May 11(Rayyan)
+After fixing most of the errors we decided to create more functions that would
+Allow the computer to search the dictionary through a binary search tree
+
+
+May 18(Freddy)
+Once we understood how the binary search tree would be implemented 
+Into our program we began implementing it, we also just worked on fixing more errors
+
+
+May 25(Tyler)
+After being able to search the dictionary we began working on 
+Randomizing the board for the user to do a regular play/ or user inputted play
+
+
+
+May 28(Rayyan)
+After finally finishing most of the necessary functions we began finalizing all of our work 
+We also are going to finish any of the last necessary errors
+
+
+May 30(Freddy)
+Got the last bit of work done today and we are just going over any necessary fixes we need for our project to be complete
+
