@@ -111,7 +111,7 @@ void userPlay(Board& _board) {
   while(flag) {
     _input = grabInput();
     transform(_input.begin(), _input.end(), _input.begin(), ::tolower);
-    bool check = _board.checkValidWord(_input);
+    bool check = _board.humanWordSearch(_input);
     if(check) {
       _board.humanList.push_back(_input);
       cout << "VALID WORD!" << endl;
@@ -132,7 +132,7 @@ void regularPlay() {
   string myfile = "Dictionary.txt";
   Board _board;
   _board.displayBoard();
-  _board.solveBoard();
+  _board.computerWordSearch();
   userPlay(_board);
   compareScores(_board);
    _board.printArrays();
@@ -150,7 +150,7 @@ void inputPlay() {
   string myfile = "Dictionary.txt";
   Board _board(myfile, _input);
   _board.displayBoard();
-  _board.solveBoard();
+  _board.computerWordSearch();
   userPlay(_board);
   compareScores(_board);
    _board.printArrays();
@@ -158,8 +158,8 @@ void inputPlay() {
 
 void compareScores(Board& _board) {
   int h_score, c_score;
-  h_score = _board.getHumanScore();
-  c_score = _board.getComputerScore();
+  h_score = _board.getScoreHuman();
+  c_score = _board.getScoreComputer();
   if (c_score > h_score) {
     cout << "GOOD TRY. THANKS FOR PLAYING!" << endl;
     

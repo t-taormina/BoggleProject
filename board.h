@@ -3,6 +3,7 @@
 #include <iostream> 
 #include <fstream>  
 #include <chrono>
+#include <ctime> 
 #include <cctype> 
 #include <random>  
 #include <string>
@@ -34,10 +35,12 @@ static string const CUBE_SIXTEEN = "hlnnrz";
       
  
 class Board {
+    private :
+        int computerScore;
+        int humanScore;
+
     public:
         string result;
-        int humanScore;
-        int computerScore;
         Dictionary dict;
         Dictionary wordsFound;
         vector<string> computerList;
@@ -61,16 +64,16 @@ class Board {
 
         void fillBoard();
         void displayBoard();  
-        bool checkValidWord(string _word);
+        bool humanWordSearch(string _word);
         bool inBounds(int row,int col);
         string getRandomLetters();
         int getRandomIndex();
 
-        int getHumanScore();
+        int getScoreHuman();
         void humanPlayersTurn();
 
-        int getComputerScore();
-        void solveBoard();
+        int getScoreComputer();
+        void computerWordSearch();
         void searchForWord(int row, int col, string currPrefix);
 
         int score(int word_length);

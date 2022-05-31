@@ -86,17 +86,17 @@ bool testBoardSolve() {
 
   Board b(myFile, "xxxhxxaxxppxyxxx");
   cout << b << endl;
-  b.solveBoard();
+  b.computerWordSearch();
   b.printArrays();
-  cout << "Computer score: " << b.getComputerScore() << endl;
+  cout << "Computer score: " << b.getScoreComputer() << endl;
   bool check = (b.computerList[0] == "happy");
   if (!check) { success = false; }
 
   Board b2(myFile, "xxxhxxaxxxpxyxxx");
   cout << b2 << endl;
-  b2.solveBoard();
+  b2.computerWordSearch();
   b2.printArrays();
-  cout << "Computer score: " << b2.getComputerScore() << endl;
+  cout << "Computer score: " << b2.getScoreComputer() << endl;
   check = (b2.computerList.size() == 0);
   if (!check) { success = false; }
   return success;

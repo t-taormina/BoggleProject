@@ -143,13 +143,21 @@ void Board::fillBoard(){
 }
 
 //Begins recursive call to find all words from the lexicon that are on the board.
-void Board::solveBoard() {
+void Board::computerWordSearch() {
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
     string currPrefix;
     for (int row = 0; row < 4; row++) {
         for (int col = 0; col < 4; col++) {
             searchForWord(row, col, currPrefix);
         }
     }
+    end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+  
+    std::cout << "finished computation at " << std::ctime(&end_time)
+              << "elapsed time: " << elapsed_seconds.count() << "s\n";
 }
 
 //
@@ -211,7 +219,7 @@ void Board::printArrays(){
     }
 }
 
-int Board::getHumanScore() {
+int Board::getScoreHuman() {
     humanScore = 0;
     for (int i = 0; i < humanList.size(); i++) {
         humanScore += score(humanList[i].length());
@@ -219,7 +227,7 @@ int Board::getHumanScore() {
     return humanScore;
 }
 
-int Board::getComputerScore() {
+int Board::getScoreComputer() {
     computerScore = 0;
     for (int i = 0; i < computerList.size(); i++) {
         computerScore += score(computerList[i].length());
@@ -242,7 +250,7 @@ int Board::score(int word_length){
 
 //Function checks whether a word is a valid word on the Boggle board
 //Return Type:bool
-bool Board::checkValidWord(string _word) {
+bool Board::humanWordSearch(string _word) {
     bool success = false;
     for (int i = 0; i < computerList.size(); i++) {
         if (_word == computerList[i])
