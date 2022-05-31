@@ -77,6 +77,8 @@ class Board {
         int score();
         void printArrays();
         void clearBuffer();
+        friend std::ostream& operator<<(std::ostream& stream, const
+            Board& boggleBoard); // << operator
 };
 
 #endif 

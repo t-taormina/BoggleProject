@@ -193,6 +193,7 @@ void Board::searchForWord(int row, int col, string currPrefix)
 void Board::printArrays(){
     cout << "***Your word list***" << endl;
     int total_hum = humanList.size();
+    if (humanList.size() == 0) { cout << "NO WORDS FOUND" << endl; }
 
     for (int i = 0; i < total_hum; i++){
         cout << humanList[i] << endl;
@@ -204,6 +205,7 @@ void Board::printArrays(){
     cout << "\n\n" << endl;
 
     cout << "***Computer found words***" << endl;
+    if (computerList.size() == 0) { cout << "NO WORDS FOUND" << endl; }
     int total_comp = computerList.size();
     for (int i = 0; i < total_comp; i++){
         cout << computerList[i] << endl;
@@ -253,6 +255,39 @@ bool Board::checkValidWord(string _word) {
         }
     }
     return success;
+}
+
+
+//Stream method for outputting Boggle Board
+
+std::ostream& operator<<(std::ostream& stream, const
+    Board& boggleBoard) {
+
+    char a = toupper(boggleBoard.boardArray[0][0]);
+    char b = toupper(boggleBoard.boardArray[0][1]);
+    char c = toupper(boggleBoard.boardArray[0][2]);
+    char d = toupper(boggleBoard.boardArray[0][3]);
+
+    char e = toupper(boggleBoard.boardArray[1][0]);
+    char f = toupper(boggleBoard.boardArray[1][1]);
+    char g = toupper(boggleBoard.boardArray[1][2]);
+    char h = toupper(boggleBoard.boardArray[1][3]);
+
+    char i = toupper(boggleBoard.boardArray[2][0]);
+    char j = toupper(boggleBoard.boardArray[2][1]);
+    char k = toupper(boggleBoard.boardArray[2][2]);
+    char l = toupper(boggleBoard.boardArray[2][3]);
+
+    char m = toupper(boggleBoard.boardArray[3][0]);
+    char n = toupper(boggleBoard.boardArray[3][1]);
+    char o = toupper(boggleBoard.boardArray[3][2]);
+    char p = toupper(boggleBoard.boardArray[3][3]);
+
+    
+    stream <<" " << a << "  " << b << "  " << c << "  " << d << "\n " << e << "  " << f << "  " << g << "  " << h
+        << "\n " << i << "  " << j << "  " << k << "  " << l << "\n " << m << "  " << n << "  " << o << "  " << p<< endl;
+    return stream;
+
 }
 
 void Board::clearBuffer() {
